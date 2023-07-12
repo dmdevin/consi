@@ -15,4 +15,4 @@ class ScannersViews(APIView):
 
         items = Scanners.objects.all()
         serializer = ScannersSerializer(items, many=True)
-        return Response({"total": item.count(), "items": serializer.data}, status=status.HTTP_200_OK)
+        return Response({"total": items.count(), "items": serializer.data}, status=status.HTTP_200_OK)
